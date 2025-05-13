@@ -1,0 +1,1106 @@
+/********** Template CSS **********/
+:root {
+    --primary: #42b1e4;
+    --secondary: #5F656F;
+    --light: #F5F5F5;
+    --dark: #02245B;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}
+
+h1,
+h2,
+.h1,
+.h2,
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+h3,
+h4,
+.h3,
+.h4,
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+h5,
+h6,
+.h5,
+.h6,
+.fw-semi-bold {
+    font-weight: 500 !important;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    transition: .5s;
+    font-weight: 500;
+}
+
+.btn-primary,
+.btn-outline-primary:hover {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+
+.topbar-right {
+    position: relative;
+    background: var(--primary);
+}
+
+.topbar-right::before {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 100%;
+    top: 0;
+    left: -15px;
+    transform: skewX(-30deg);
+    background-color: var(--primary);
+}
+
+
+/*** Navbar ***/
+.navbar.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+.navbar .navbar-brand {
+    position: relative;
+    padding-right: 50px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    background: var(--primary);
+}
+
+.navbar .navbar-brand::after {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 100%;
+    top: 0;
+    right: -25px;
+    transform: skewX(-30deg);
+    background-color: var(--primary);
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 35px;
+    padding: 20px 0;
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Header ***/
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #00082d 0%, rgba(0, 8, 45, 0) 100%);
+    z-index: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 15%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--primary);
+    border: 15px solid var(--primary);
+    border-radius: 3.5rem;
+}
+
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        position: relative;
+        min-height: 450px;
+    }
+    
+    #header-carousel .carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.page-header {
+    background: linear-gradient(to right, #00082d 0%, rgba(0, 8, 45, 0) 100%), url(../img/carousel-2.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.page-header .breadcrumb-item+.breadcrumb-item::before {
+    color: var(--light);
+}
+
+.page-header .breadcrumb-item,
+.page-header .breadcrumb-item a {
+    font-size: 18px;
+    color: var(--light);
+}
+
+
+/*** Facts ***/
+.facts {
+    position: relative;
+    margin: 6rem 0;
+    background: var(--dark);
+}
+
+.facts .border {
+    border-color: rgba(255, 255, 255, .1) !important;
+}
+
+
+/*** Features ***/
+.btn-play {
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    transform: translateY(-50%);
+    display: block;
+    box-sizing: content-box;
+    width: 16px;
+    height: 26px;
+    border-radius: 100%;
+    border: none;
+    outline: none !important;
+    padding: 18px 20px 20px 28px;
+    background: var(--primary);
+}
+
+@media (max-width: 992px) {
+    .btn-play {
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.btn-play:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 100%;
+    animation: pulse-border 1500ms ease-out infinite;
+}
+
+.btn-play:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 100%;
+    transition: all 200ms;
+}
+
+.btn-play span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    left: -1px;
+    border-left: 16px solid #FFFFFF;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
+        opacity: 0;
+    }
+}
+
+.modal-video .modal-dialog {
+    position: relative;
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+}
+
+.modal-video .modal-body {
+    position: relative;
+    padding: 0px;
+}
+
+.modal-video .close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0px;
+    top: -30px;
+    z-index: 999;
+    font-size: 30px;
+    font-weight: normal;
+    color: #FFFFFF;
+    background: #000000;
+    opacity: 1;
+}
+
+
+/*** Service ***/
+.service-item {
+    position: relative;
+    margin: 65px 0 25px 0;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+.service-item .service-img {
+    position: absolute;
+    padding: 12px;
+    width: 130px;
+    height: 130px;
+    top: -65px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFFFFF;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .09);
+    z-index: 2;
+}
+
+.service-item .service-detail {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.service-item .service-title {
+    position: absolute;
+    padding: 65px 30px 25px 30px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #FFFFFF;
+    transition: .5s;
+}
+
+.service-item:hover .service-title {
+    top: -100%;
+}
+
+.service-item .service-text {
+    position: absolute;
+    overflow: hidden;
+    padding: 65px 30px 25px 30px;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: rgba(2, 36, 91, .7);
+    transition: .5s;
+}
+
+.service-item:hover .service-text {
+    top: 0;
+}
+
+.service-item .service-text::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100px;
+    top: -100%;
+    left: 0;
+    transform: skewY(-12deg);
+    background: #FFFFFF;
+    transition: .5s;
+}
+
+.service-item:hover .service-text::before {
+    top: -55px;
+}
+
+.service-item .btn {
+    position: absolute;
+    width: 130px;
+    height: 50px;
+    left: 50%;
+    bottom: -25px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    background: #FFFFFF;
+    border: none;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .09);
+    z-index: 2;
+}
+
+.service-item .btn:hover {
+    color: #FFFFFF;
+    background: var(--primary);
+}
+
+
+/*** Project ***/
+.project-carousel {
+    position: relative;
+    background: var(--dark);
+}
+
+.project-item {
+    position: relative;
+    display: block;
+}
+
+.project-item img {
+    transition: .5s;
+}
+
+.project-item:hover img,
+.project-carousel .owl-item.center img {
+    margin-top: -60px;
+}
+
+.project-item .project-title {
+    position: absolute;
+    padding: 0 15px;
+    width: 100%;
+    height: 80px;
+    bottom: -110px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--dark);
+    transition: .5s;
+}
+
+.project-item:hover .project-title,
+.project-carousel .owl-item.center .project-title  {
+    bottom: -60px;
+}
+
+.project-item .project-title::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 30px;
+    top: -15px;
+    left: 0;
+    transform: skewY(-5deg);
+    background: var(--dark);
+    transition: .5s;
+}
+
+.project-carousel .owl-nav {
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    transition: .5s;
+    opacity: 0;
+    z-index: 1;
+}
+
+.project-carousel:hover .owl-nav {
+    opacity: 1;
+}
+
+.project-carousel .owl-nav .owl-prev,
+.project-carousel .owl-nav .owl-next {
+    margin: 0 30px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: var(--primary);
+    border-radius: 45px;
+    font-size: 22px;
+    transition: .5s;
+}
+
+
+
+
+
+
+
+/*** Footer ***/
+.footer {
+    color: #B0B9AE;
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #B0B9AE;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--light);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.copyright {
+    color: #B0B9AE;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.throneslogo{
+ padding-bottom: 0cap;
+}
+
+
+/*--------------------------------------------------------------
+# Clients Section
+--------------------------------------------------------------*/
+.clients {
+    padding: 20px 0;
+  }
+  
+  .clients .client-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .clients .client-logo img {
+    padding: 20px 40px;
+    max-width: 90%;
+    transition: 0.3s;
+    opacity: 0.5;
+    filter: grayscale(100);
+  }
+  
+  .clients .client-logo img:hover {
+    filter: none;
+    opacity: 1;
+  }
+  
+  @media (max-width: 640px) {
+    .clients .client-logo img {
+      padding: 20px;
+    }
+  }
+
+  .footer {
+    background-color: var(--dark) !important; /* Dark blue */
+    color: #ffffff !important;
+}
+
+.container-fluid  { /* Ensure this targets your product segment */
+    background-color: var(--dark) !important; /* Dark blue */
+}
+
+
+
+/********** Template CSS **********/
+:root {
+    --primary: #42b1e4; /* Keeping original */
+    --secondary: #5F656F;
+    --light: #F5F5F5;
+    --dark: #00082d;
+}
+
+body {
+    background-color: #00082d; /* Entire site background is dark blue */
+}
+
+/* Breadcrumbs */
+.page-header .breadcrumb-item,
+.page-header .breadcrumb-item a {
+    color: #ffffff !important; /* Changed from blue */
+}
+
+/* Service Section */
+.service-item .service-text {
+    background: rgba(0, 8, 45, .7);
+    color: #0d1228 !important; /* Keeping the original color */
+}
+
+.service-item .service-text p {
+    color: #ffffff !important; /* Making paragraph text white */
+}
+
+/* Project Titles */
+.project-item .project-title,
+.project-item .project-title::before {
+    background: #00082d;
+    color: #ffffff !important; /* Ensuring text is white */
+}
+
+/* Footer */
+.footer, .footer .btn.btn-link, .copyright {
+    color: #ffffff !important;
+}
+
+/* Change only text elements with #0d1228 to white */
+h1, h2, h3, h4, h5, h6, p, a, span, li, label, strong, b {
+    color: #ffffff !important;
+}
+
+/* Exclude service section from white text rule */
+.service-item .service-text,
+.service-item .service-text * {
+    color: #0d1228 !important;
+}
+
+.service-title h3 {
+    color: #00082d !important;
+}
+
+.btn.btn-light {
+    background-color: #4AC1FF !important;
+    color: white !important;
+    border: none;
+}
+
+.btn.btn-light:hover {
+    background-color: white !important;
+    color: #00082d !important;
+    border: 1px solid #00082d !important;
+}
+
+/* Keep elements with #42b1e4 unchanged */
+a, .highlight, .some-class-name {
+    color: #42b1e4 !important;
+}
+
+/* Change text on backgrounds with #42b1e4 to white */
+[class*="bg-"], .btn-primary, .header, .some-background-class {
+    background-color: #42b1e4;
+    color: #ffffff !important;
+}
+
+/* Hover effect for text on #42b1e4 background */
+[class*="bg-"]:hover, .btn-primary:hover, .header:hover, .some-background-class:hover {
+    color: #00082d !important;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #00082d !important; 
+}
+
+/* Default Navbar Item Colors */
+.navbar-nav .nav-item .nav-link {
+    color: #ffffff !important; 
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect - Change to Primary Blue */
+.navbar-nav .nav-item .nav-link:hover {
+    color: #42b1e4 !important; /* Primary blue on hover */
+}
+
+/* Active (Selected) Link */
+.navbar-nav .nav-item .nav-link.active {
+    color: #42b1e4 !important; /* Active link remains blue */
+    font-weight: bold;
+}
+
+
+/* Change text on a white background to dark blue EXCEPT the navbar */
+.bg-white:not(.navbar) *,
+.bg-light:not(.navbar) *,
+.white-section:not(.navbar) * {
+    color: #00082d !important; /* Dark blue text */
+}
+
+
+.navbar {
+    background-color: #00082d !important; /* Dark Blue */
+}
+
+
+
+/* Ensure navbar text is readable */
+.navbar .nav-link, 
+.navbar .navbar-brand {
+    color: #ffffff !important;
+}
+
+
+
+
+/* ================= TOP BAR STYLES ================= */
+
+/* Top Bar Background */
+
+
+/* Top Bar Links */
+.top-bar a {
+    color: #ffffff !important;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.top-bar a:hover {
+    color: #42b1e4 !important; /* Dark Blue Hover Effect */
+}
+
+/* Top Bar Icons */
+.top-bar i {
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.top-bar i:hover {
+    transform: scale(1.2);
+    color: #42b1e4 !important;
+}
+
+/* ================= NAVBAR STYLES ================= */
+
+
+
+/* Navbar and Top Bar Background */
+.navbar, .top-bar {
+    background-color: #00082d !important;
+}
+
+/* Dropdown Menu */
+.navbar .dropdown-menu {
+    background-color: #ffffff !important; /* Force white background */
+    border: none !important;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+
+/* ================= EXCLUDE COMPANY LOGO ================= */
+.navbar .navbar-brand img {
+    pointer-events: none; /* Prevent hover effects */
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: #00AEEF !important; /* Light Blue */
+    color: #ffffff !important;
+    border: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #ffffff !important; /* Dark Blue */
+    color: #00082d !important;
+}
+
+::placeholder {
+    color: #6FAED9 !important;
+    opacity: 1; /* Ensure it’s fully visible */
+}
+
+.col-md-6{
+    padding-top: 2rem;
+}
+
+.form-control {
+    color: #00082d; /* Set input text color for contrast */
+    background-color: white; /* Keep input background white */
+}
+
+.form-control::placeholder {
+    color: #6FAED9 !important; 
+    opacity: 1; 
+}
+
+.form-floating label {
+    color: #6FAED9; /* Light blue color matching your theme */
+    opacity: 1;
+    transform: scale(1) translateY(-12px); /* Keep label above input */
+    transition: all 0.2s ease-in-out;
+    font-size: 1rem; /* Maintain readability */
+    padding-left: 10px; /* Avoid overlap with text */
+}
+
+.form-floating .form-control::placeholder {
+    color: transparent; /* Hide placeholder text */
+}
+
+.form-floating .form-control:focus ~ label,
+.form-floating .form-control:not(:placeholder-shown) ~ label {
+    transform: scale(0.9) translateY(-12px);
+    opacity: 1;
+    color: #4AC1FF; /* Highlight when typing */
+}
+
+.topbar-right {
+    position: relative;
+    background: #00082d !important;
+}
+
+.topbar-right::before {
+    display: none; /* Removes the skew effect */
+}
+
+.navbar {
+    background: #00082d !important;
+}
+
+.navbar .navbar-brand {
+    background: #00082d !important;
+}
+
+.navbar .navbar-brand::after {
+    display: none; /* Removes the skew effect */
+}
+
+ 
+.col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+
+
+
+
+/* services section start */
+
+.services_section {
+    width: 100%;
+    float: left;
+}
+
+.services_taital {
+    width: 100%;
+    float: left;
+    font-size: 40px;
+    color: #1b1b1b;
+    font-weight: bold;
+    text-align: center;
+}
+
+.services_text_1 {
+    width: 100%;
+    font-size: 16px;
+    margin: 0 auto;
+    color: #1f1f1f;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.services_text {
+    width: 100%;
+    font-size: 14px;
+    margin: 0px;
+    color: #1b1b1b;
+    padding-top: 20px;
+}
+
+.services_section_2 {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.box_main {
+    width: 100%;
+    background-color: #143D60;
+    height: auto;
+    padding: 40px 20px 40px 20px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+.box_main:hover {
+    background-color: #00082d;
+    box-shadow: 0px 0px 20px 0px !important;
+}
+
+.box_main.active {
+    background-color: #143D60;
+    box-shadow: 0px 0px 20px 0px;
+}
+
+.service_img {
+    width: 30%;
+    min-height: 71px;
+}
+
+.development_text {
+    width: 100%;
+    font-size: 24px;
+    color: #ffffff !important ;
+    font-weight: bold;
+    padding: 20px 0px 0px 0px;
+    text-transform: uppercase;
+    min-height: 80px;
+}
+
+.service_img img {
+    min-height: 80px;
+    max-height: 80px;
+}
+
+.readmore_bt {
+    width: 140px;
+    padding-top: 30px;
+}
+
+.readmore_bt a {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #fda51a;
+    padding: 15px 20px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.readmore_bt a:hover {
+    color: #252525 !important;
+}
+
+
+/* services section end */
+
+
+
+/* Set default navbar link color */
+.navbar .navbar-nav .nav-link {
+    color: var(--light) !important; /* Change to your desired color */
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Set hover effect */
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary) !important; /* Change to your hover color */
+    background-color: transparent; /* Optional: Remove any unwanted background */
+}
+
+/* Remove any conflicting styles */
+.navbar .navbar-nav .nav-link:focus {
+    color: var(--light) !important;
+}
+
+/* Dropdown menu items */
+.navbar .dropdown-menu {
+    background-color: var(--dark) !important; /* Match your navbar */
+    
+}
+
+.navbar .dropdown-menu .dropdown-item {
+    color: var(--light) !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+    color: var(--primary) !important;
+    background-color: transparent !important;
+}
+
+
+
+
+
+
+/*** Project Portfolio ***/
+#portfolio-flters li {
+    display: inline-block;
+    font-weight: 500;
+    color: var(--dark);
+    cursor: pointer;
+    transition: .5s;
+    border-bottom: 2px solid transparent;
+}
+
+#portfolio-flters li:hover,
+#portfolio-flters li.active {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.portfolio-item img {
+    transition: .5s;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item .portfolio-overlay {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    left: 50%;
+    background: rgba(53, 53, 53, .7);
+    transition: .5s;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.portfolio-item .portfolio-overlay .btn {
+    opacity: 0;
+}
+
+.portfolio-item:hover .portfolio-overlay .btn {
+    opacity: 1;
+}
+
+/*** text-primary ***/
+.text-primary {
+    color: #ffffff !important;
+  }
+
